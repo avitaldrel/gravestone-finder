@@ -68,29 +68,29 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FIELD-01 | — | Pending |
-| FIELD-02 | — | Pending |
-| FIELD-03 | — | Pending |
-| FIELD-04 | — | Pending |
-| FIELD-05 | — | Pending |
-| FIELD-06 | — | Pending |
-| SRCH-01 | — | Pending |
-| SRCH-02 | — | Pending |
-| SRCH-03 | — | Pending |
-| SRCH-04 | — | Pending |
-| SRCH-05 | — | Pending |
-| ORG-01 | — | Pending |
-| ORG-02 | — | Pending |
-| ORG-03 | — | Pending |
-| PLAT-01 | — | Pending |
-| PLAT-02 | — | Pending |
-| PLAT-03 | — | Pending |
+| FIELD-01 | Phase 1 | Pending |
+| FIELD-02 | Phase 1 | Pending |
+| FIELD-03 | Phase 1 | Pending |
+| FIELD-04 | Phase 1 | Pending |
+| FIELD-05 | Phase 1 | Pending |
+| FIELD-06 | Phase 2 | Pending |
+| SRCH-01 | Phase 3 | Pending |
+| SRCH-02 | Phase 3 | Pending |
+| SRCH-03 | Phase 4 | Pending |
+| SRCH-04 | Phase 3 | Pending |
+| SRCH-05 | Phase 3 | Pending |
+| ORG-01 | Phase 1 | Pending |
+| ORG-02 | Phase 2 | Pending |
+| ORG-03 | Phase 3 | Pending |
+| PLAT-01 | Phase 4 | Pending |
+| PLAT-02 | Phase 4 | Pending |
+| PLAT-03 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-06*
-*Last updated: 2026-04-06 after initial definition*
+*Last updated: 2026-04-06 after roadmap creation*
