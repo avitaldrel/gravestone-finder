@@ -4,10 +4,10 @@ milestone: v1.0
 milestone_name: milestone
 status: planning
 stopped_at: Phase 1 context gathered
-last_updated: "2026-04-08T01:36:01.509Z"
-last_activity: 2026-04-06 -- Roadmap created with 4 phases, 17 requirements mapped
+last_updated: "2026-04-08T02:07:57.818Z"
+last_activity: 2026-04-07 -- Scope revised to CSV-import + frontend-only; roadmap reduced from 4 to 3 phases
 progress:
-  total_phases: 4
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,17 +18,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-06)
+See: .planning/PROJECT.md (updated 2026-04-07)
 
 **Core value:** A family member can search a veteran's name and immediately find where their flag is planted -- both on a visual map and as a human-readable location.
-**Current focus:** Phase 1: Organizer Core
+**Current focus:** Phase 1: Data Foundation
 
 ## Current Position
 
-Phase: 1 of 4 (Organizer Core)
+Phase: 1 of 3 (Data Foundation)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-04-06 -- Roadmap created with 4 phases, 17 requirements mapped
+Last activity: 2026-04-07 -- Scope revised to CSV-import + frontend-only; roadmap reduced from 4 to 3 phases
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -60,8 +60,9 @@ Progress: [░░░░░░░░░░] 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- [Roadmap]: 4 phases derived from 17 v1 requirements; standard granularity
-- [Roadmap]: Phases 2 and 3 both depend on Phase 1 but not on each other (parallel-capable if needed)
+- [Scope revision]: CSV import is the sole data path -- no organizer CRUD dashboard
+- [Scope revision]: No auth system needed -- no protected pages
+- [Scope revision]: 3 phases (down from 4), 11 requirements (down from 17)
 - [Research]: SVG grid (not map library) for field visualization; client-side fuzzy search for offline resilience
 
 ### Pending Todos
@@ -76,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T01:36:01.468Z
+Last session: 2026-04-08T02:07:57.802Z
 Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-organizer-core/01-CONTEXT.md
+Resume file: .planning/phases/01-data-foundation/01-CONTEXT.md
