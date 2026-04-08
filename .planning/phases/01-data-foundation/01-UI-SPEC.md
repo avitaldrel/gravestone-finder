@@ -47,14 +47,16 @@ Exceptions: Drop zone has a minimum height of 200px (not a spacing token -- a co
 
 ## Typography
 
-| Role | Size | Weight | Line Height | Tailwind Class |
-|------|------|--------|-------------|----------------|
-| Body | 14px | 400 (regular) | 1.5 | text-sm font-normal leading-normal |
-| Label | 14px | 500 (medium) | 1.4 | text-sm font-medium |
-| Heading | 20px | 600 (semibold) | 1.2 | text-xl font-semibold leading-tight |
-| Display | 28px | 700 (bold) | 1.2 | text-2xl font-bold leading-tight |
+| Role | Size | Weight | Line Height | Tailwind Class | Differentiator |
+|------|------|--------|-------------|----------------|----------------|
+| Body | 14px | 400 (regular) | 1.5 | text-sm font-normal leading-normal | Default foreground color |
+| Label | 14px | 400 (regular) | 1.4 | text-sm font-normal | Color: `--muted-foreground` distinguishes from Body |
+| Heading | 20px | 600 (semibold) | 1.2 | text-xl font-semibold leading-tight | Size distinguishes from Display |
+| Display | 28px | 600 (semibold) | 1.2 | text-2xl font-semibold leading-tight | Size distinguishes from Heading |
 
-**Rationale:** 14px body is compact enough for data tables (directory listing, error rows) while remaining legible on mobile. 20px heading provides clear hierarchy without overwhelming the functional UI. Display size (28px) is used only for the page title on the admin page.
+**Weights used:** 2 total -- regular (400) and semibold (600).
+
+**Rationale:** 14px body is compact enough for data tables (directory listing, error rows) while remaining legible on mobile. Labels share body size but use `--muted-foreground` color to establish visual hierarchy without adding a third weight. 20px heading provides clear hierarchy without overwhelming the functional UI. Display (28px) is used only for the page title on the admin page, differentiated from Heading by size alone -- both use semibold (600).
 
 **Print typography overrides (directory page only):**
 
@@ -62,7 +64,7 @@ Exceptions: Drop zone has a minimum height of 200px (not a spacing token -- a co
 |------|------|--------|-------------|
 | Body | 10pt | 400 | 1.4 |
 | Heading | 14pt | 600 | 1.2 |
-| Display | 18pt | 700 | 1.1 |
+| Display | 18pt | 600 | 1.1 |
 
 ---
 
@@ -89,7 +91,7 @@ Uses shadcn/ui CSS custom properties (HSL-based). Specific hex values are determ
 |------|-------------|-------|
 | Warning | `--warning` (amber-500 / `#f59e0b`) | Warning badges for unrecognized columns (D-11), import warnings |
 | Success | `--success` (emerald-600 / `#059669`) | Success state after import completes without errors |
-| Muted foreground | `--muted-foreground` | Secondary text, row numbers in error list, empty state copy |
+| Muted foreground | `--muted-foreground` | Secondary text, Label role text, row numbers in error list, empty state copy |
 
 **Drop zone states (D-01):**
 
@@ -204,6 +206,12 @@ Uses shadcn/ui CSS custom properties (HSL-based). Specific hex values are determ
 ---
 
 ## Layout Contract
+
+### Visual Hierarchy -- Focal Points
+
+Primary visual anchor per page:
+- **Admin page (/admin):** The drop zone is the focal point. It occupies the largest visual area above the fold, uses the most prominent interactive states, and is the first element the organizer interacts with.
+- **Directory page (/directory):** The alphabetical list (default tab) is the focal point. It is the primary content area that fills the viewport, providing the name-to-position lookup that organizers and families need.
 
 ### Admin Page (/admin) -- D-07: Single page, import at top, summary below
 
