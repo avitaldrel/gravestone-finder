@@ -684,27 +684,31 @@ export async function createClient() {
 | A3 | Header auto-detection with >= 2 matching column names is sufficient heuristic | Architecture Patterns | MEDIUM - edge case: data that happens to contain "Name" or "Row" as a value in first row. Add fallback UI to let user override. |
 | A4 | Supabase publishable key naming (`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`) is current | Code Examples | LOW - if old naming (`ANON_KEY`) still works, both are valid. Check Supabase dashboard for actual key names. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Supabase project: already created?**
    - What we know: CLAUDE.md specifies Supabase Cloud (free tier) as the backend.
    - What's unclear: Whether the user has already created a Supabase project and has the URL/key.
    - Recommendation: Phase 1 Wave 0 should include a task to set up the Supabase project if not done. Include instructions.
+   - RESOLVED: Plan 01-01 Task 3 is a `checkpoint:human-action` that walks the user through creating a Supabase project, filling in .env.local, and pushing the schema. This covers the setup regardless of whether a project already exists.
 
 2. **Event commercial status for Vercel hosting**
    - What we know: Vercel Hobby plan restricts commercial use. STATE.md flags this as a concern.
    - What's unclear: Whether the event has any commercial aspect (sponsors, donations, ticket sales).
    - Recommendation: Start with Vercel Hobby. If commercial, budget $20/mo for Pro or use Cloudflare Pages (free, allows commercial).
+   - RESOLVED: Deferred to deployment phase. Phase 1 is local development only -- no hosting decision needed yet. The user will choose hosting tier when deploying. Plans do not assume a specific Vercel plan.
 
 3. **zod v4 + @hookform/resolvers edge cases**
    - What we know: @hookform/resolvers 5.2.2 added zod v4 support, but GitHub issues report TypeScript type inference problems.
    - What's unclear: Whether the specific usage pattern in this project triggers the type errors.
    - Recommendation: Start with zod v4. If type errors block, either cast as `any` or downgrade to zod 3.23.x.
+   - RESOLVED: Plans install zod v4 + @hookform/resolvers 5.2.x. Plan 01-02 uses Zod directly for row validation (no hookform integration there). Plan 01-03 does not use react-hook-form for the import dialog (it uses simple button callbacks). If type errors surface during execution, the documented fallback (cast or downgrade to zod 3.23.x) applies.
 
 4. **Sample template file format (D-06)**
    - What we know: Need a downloadable sample file with correct headers and example rows.
    - What's unclear: Should it be CSV only, or also provide an Excel version?
    - Recommendation: Provide a CSV sample (universal, simplest). Can add .xlsx later. Place in `public/templates/sample-flags.csv`.
+   - RESOLVED: Plan 01-01 Task 2 creates `public/templates/sample-flags.csv` (CSV only). CSV is universally readable by all spreadsheet programs. An Excel version can be added as a follow-up if users request it.
 
 ## Environment Availability
 
