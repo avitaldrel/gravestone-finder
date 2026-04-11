@@ -138,7 +138,7 @@ Uses shadcn/ui CSS custom properties (HSL-based). Specific hex values are determ
 | Replace All description | Remove all existing flags and import only the new file data. |
 | Merge button | Merge with Existing |
 | Merge description | Add new flags and update existing ones that share the same row and position. |
-| Cancel button | Cancel |
+| Keep Existing button | Keep Existing Data |
 
 ### Directory Page (/directory)
 
@@ -180,7 +180,7 @@ Uses shadcn/ui CSS custom properties (HSL-based). Specific hex values are determ
 
 | Component | shadcn Name | Usage |
 |-----------|-------------|-------|
-| Button | button | Import CTA, Print, Replace/Merge/Cancel, Download Template |
+| Button | button | Import CTA, Print, Replace/Merge/Keep Existing Data, Download Template |
 | Dialog | dialog | Replace All vs Merge prompt (D-13) |
 | Table | table | Data summary table on admin page, directory listings |
 | Card | card | Import summary card, drop zone wrapper |
@@ -301,7 +301,7 @@ Primary visual anchor per page:
 |  Add new flags and update existing ones   |
 |  that share the same row and position.    |
 |                                           |
-|             [Cancel]  <- ghost/outline    |
+|       [Keep Existing Data]  <- outline    |
 +------------------------------------------+
 ```
 
@@ -309,7 +309,7 @@ Primary visual anchor per page:
 - Buttons stacked vertically (full width within dialog)
 - Replace All: `variant="destructive"` (red)
 - Merge: `variant="default"` (primary/accent)
-- Cancel: `variant="outline"` or `variant="ghost"`
+- Keep Existing Data: `variant="outline"` or `variant="ghost"`
 
 ---
 
