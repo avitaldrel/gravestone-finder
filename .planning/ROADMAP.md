@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roadmap delivers a memorial Flag event web app in four phases, ordered by data dependency: organizers must define the field and enter flags before visitors can search, and search must work before the visual map can highlight results. Phase 1 delivers a complete organizer workflow (auth, layout, CRUD). Phase 2 adds efficient data operations (CSV import, printable directory). Phase 3 delivers the core value proposition -- public visitor search by veteran name. Phase 4 completes the experience with an interactive SVG grid map and verifies platform requirements (responsive, performant).
+This roadmap delivers a memorial Flag event web app in three phases. Phase 1 sets up the project foundation and CSV data import -- the sole data path into the system. Phase 2 delivers the core value proposition: a public search frontend where families find their veteran's flag by name. Phase 3 completes the experience with an interactive SVG grid map, responsive polish, and performance verification at scale.
 
 ## Phases
 
@@ -12,40 +12,35 @@ This roadmap delivers a memorial Flag event web app in four phases, ordered by d
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Organizer Core** - Auth-protected dashboard for field layout definition and flag CRUD with position validation
-- [ ] **Phase 2: Data Import and Export** - Bulk CSV flag import and printable name-to-position directory
-- [ ] **Phase 3: Visitor Search** - Public fuzzy name search returning human-readable flag locations
-- [ ] **Phase 4: Interactive Grid Map and Platform** - SVG visual map with search highlight, responsive across devices, performant at scale
+- [ ] **Phase 1: Data Foundation** - Project setup, CSV import pipeline, printable directory, and data layer
+- [ ] **Phase 2: Visitor Search** - Public fuzzy name search returning human-readable flag locations
+- [ ] **Phase 3: Interactive Grid Map and Platform** - SVG visual map with search highlight, responsive across devices, performant at scale
 
 ## Phase Details
 
-### Phase 1: Organizer Core
-**Goal**: Organizers can define a field layout, add/edit/remove flags, and trust that no two flags share a position -- all behind auth protection, on a data model ready for future multi-event expansion
+### Phase 1: Data Foundation
+**Goal**: Organizers can import flag data from a CSV file, see validation feedback, and generate a printable directory -- establishing the data layer that all visitor-facing features build on
 **Depends on**: Nothing (first phase)
-**Requirements**: FIELD-01, FIELD-02, FIELD-03, FIELD-04, FIELD-05, ORG-01, PLAT-03
+**Requirements**: IMP-01, IMP-02, IMP-03, ORG-01
 **Success Criteria** (what must be TRUE):
-  1. Organizer can log in with a password/passphrase and unauthenticated users cannot access organizer pages
-  2. Organizer can define a field layout specifying rows and the number of positions per row
-  3. Organizer can add a flag by entering a veteran name and selecting a row/position, and the flag appears in a list
-  4. Organizer can edit a flag's name or position, and can remove a flag entirely
-  5. Attempting to assign two flags to the same position is rejected with a clear error message
-**Plans**: TBD
+  1. Organizer can upload a CSV file with veteran names and row/position data, and flags appear in the system
+  2. Import validates data and clearly reports errors (missing names, duplicate positions, malformed rows)
+  3. Re-importing replaces existing data cleanly
+  4. Organizer can generate a printable alphabetical name-to-position directory
+**Plans:** 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md -- Project scaffolding, types, Supabase setup, DB schema, test infrastructure
+- [ ] 01-02-PLAN.md -- Parsing library (TDD): spreadsheet parsing, validation, row normalization, header detection
+- [ ] 01-03-PLAN.md -- Import API route and admin page UI (drop zone, import dialog, summary, errors)
+- [ ] 01-04-PLAN.md -- Directory page with alphabetical and by-row views, print CSS
+
 **UI hint**: yes
 
-### Phase 2: Data Import and Export
-**Goal**: Organizers can efficiently populate the field from an existing spreadsheet and produce a physical backup directory for event day
+### Phase 2: Visitor Search
+**Goal**: A family member can search a veteran's name on their phone and immediately see where the flag is located, even with imperfect spelling
 **Depends on**: Phase 1
-**Requirements**: FIELD-06, ORG-02
-**Success Criteria** (what must be TRUE):
-  1. Organizer can upload a CSV file and flags are created in bulk with validation feedback (successes, errors, duplicates)
-  2. Organizer can generate a printable alphabetical name-to-position directory suitable for printing or saving as PDF
-**Plans**: TBD
-**UI hint**: yes
-
-### Phase 3: Visitor Search
-**Goal**: A family member can search a veteran's name on their phone and immediately see where the flag is located, without logging in, even with imperfect spelling
-**Depends on**: Phase 1
-**Requirements**: SRCH-01, SRCH-02, SRCH-04, SRCH-05, ORG-03
+**Requirements**: SRCH-01, SRCH-02, SRCH-04, SRCH-05
 **Success Criteria** (what must be TRUE):
   1. Visitor can access the search page without any login or signup
   2. Visitor can type a veteran's name and see matching results as they type
@@ -55,26 +50,25 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: TBD
 **UI hint**: yes
 
-### Phase 4: Interactive Grid Map and Platform
-**Goal**: Search results come alive on a visual map that highlights the found flag, and the entire app works smoothly on phones at the event and desktops for organizers, handling 100+ flags without lag
-**Depends on**: Phase 3
+### Phase 3: Interactive Grid Map and Platform
+**Goal**: Search results come alive on a visual map that highlights the found flag, and the entire app works smoothly on phones at the event and desktops, handling 100+ flags without lag
+**Depends on**: Phase 2
 **Requirements**: SRCH-03, PLAT-01, PLAT-02
 **Success Criteria** (what must be TRUE):
   1. When a visitor finds a flag via search, the result includes an interactive visual grid map with the flag's position highlighted and visually distinct
   2. The grid map is responsive -- usable on both mobile phone screens and desktop browsers without horizontal scrolling or broken layout
-  3. The entire application (organizer dashboard, search, map) works correctly on mobile browsers and desktop browsers
-  4. The application handles 100+ flags across all features (CRUD, search, map rendering) without noticeable performance degradation
+  3. The entire application (import, search, map) works correctly on mobile browsers and desktop browsers
+  4. The application handles 100+ flags across all features (import, search, map rendering) without noticeable performance degradation
 **Plans**: TBD
 **UI hint**: yes
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Organizer Core | 0/TBD | Not started | - |
-| 2. Data Import and Export | 0/TBD | Not started | - |
-| 3. Visitor Search | 0/TBD | Not started | - |
-| 4. Interactive Grid Map and Platform | 0/TBD | Not started | - |
+| 1. Data Foundation | 0/4 | Planned | - |
+| 2. Visitor Search | 0/TBD | Not started | - |
+| 3. Interactive Grid Map and Platform | 0/TBD | Not started | - |
