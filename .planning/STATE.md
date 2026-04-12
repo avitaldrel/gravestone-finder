@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-04-08T02:07:57.818Z"
-last_activity: 2026-04-07 -- Scope revised to CSV-import + frontend-only; roadmap reduced from 4 to 3 phases
+status: executing
+stopped_at: Phase 2 context gathered
+last_updated: "2026-04-12T23:53:21.344Z"
+last_activity: 2026-04-12 -- Phase 01 execution started
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 4
+  completed_plans: 3
+  percent: 75
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-07)
 
 **Core value:** A family member can search a veteran's name and immediately find where their flag is planted -- both on a visual map and as a human-readable location.
-**Current focus:** Phase 1: Data Foundation
+**Current focus:** Phase 01 — data-foundation
 
 ## Current Position
 
-Phase: 1 of 3 (Data Foundation)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-04-07 -- Scope revised to CSV-import + frontend-only; roadmap reduced from 4 to 3 phases
+Phase: 01 (data-foundation) — EXECUTING
+Plan: 1 of 4
+Status: Executing Phase 01
+Last activity: 2026-04-12 -- Phase 01 execution started
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -65,6 +65,10 @@ Recent decisions affecting current work:
 - [Scope revision]: 3 phases (down from 4), 11 requirements (down from 17)
 - [Research]: SVG grid (not map library) for field visualization; client-side fuzzy search for offline resilience
 
+### Roadmap Evolution
+
+- Phase 4 added: Demo Mode — "Try Demo" button seeds ~50 sample flags so users can explore all features without real data
+
 ### Pending Todos
 
 None yet.
@@ -77,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T02:07:57.802Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-data-foundation/01-CONTEXT.md
+Last session: 2026-04-12T23:53:21.313Z
+Stopped at: Phase 2 context gathered
+Resume file: .planning/phases/02-visitor-search/02-CONTEXT.md
