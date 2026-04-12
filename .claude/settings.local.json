@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.healingfield.org)",
+      "WebFetch(domain:support.dav.org)",
+      "WebFetch(domain:matthewlarn.medium.com)",
+      "WebFetch(domain:situm.com)",
+      "WebFetch(domain:www.osotamerica.org)",
+      "WebFetch(domain:eaglefieldofhonor.org)",
+      "WebFetch(domain:www.nngroup.com)",
+      "WebFetch(domain:www.osv.org)",
+      "WebFetch(domain:baymard.com)",
+      "WebFetch(domain:planoflagsofhonor.com)",
+      "WebFetch(domain:seemylegacy.com)",
+      "WebFetch(domain:flagtoremember.com)",
+      "WebFetch(domain:cemeteryfind.com)",
+      "WebFetch(domain:georgetowntxfieldofhonor.org)",
+      "WebFetch(domain:advancedkiosks.com)",
+      "WebFetch(domain:websites.uta.edu)",
+      "WebFetch(domain:www.flagfinder.app)",
+      "WebFetch(domain:chairnerd.seatgeek.com)",
+      "WebFetch(domain:www.healingfieldpv.com)",
+      "WebFetch(domain:flagsforhonor.org)",
+      "WebFetch(domain:rotaryclubofkeller.org)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs: define v1 requirements' --files .planning/REQUIREMENTS.md)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(01\\): capture phase context' --files .planning/phases/01-data-foundation/01-CONTEXT.md .planning/phases/01-data-foundation/01-DISCUSSION-LOG.md)"
+    ]
+  }
+}
