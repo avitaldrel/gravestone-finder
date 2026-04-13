@@ -21,9 +21,9 @@ describe("ResultCard", () => {
     expect(screen.getByText("Row B, Position 7")).toBeDefined();
   });
 
-  it("renders MapPin icon", () => {
+  it("renders as a card without icons", () => {
     const { container } = render(<ResultCard flag={flag} />);
     const svg = container.querySelector("svg");
-    expect(svg).not.toBeNull();
+    expect(svg).toBeNull();
   });
 });

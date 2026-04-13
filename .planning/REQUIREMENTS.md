@@ -8,26 +8,26 @@
 
 ### Data Import
 
-- [ ] **IMP-01**: Organizer can import flag data from a CSV/spreadsheet file (name, row, position)
-- [ ] **IMP-02**: Import validates data and reports errors (missing names, duplicate positions, malformed rows)
-- [ ] **IMP-03**: Re-importing replaces existing data (clean slate per import)
+- [x] **IMP-01**: Organizer can import flag data from a CSV/spreadsheet file (name, row, position)
+- [x] **IMP-02**: Import validates data and reports errors (missing names, duplicate positions, malformed rows)
+- [x] **IMP-03**: Re-importing replaces existing data (clean slate per import)
 
 ### Visitor Search
 
-- [ ] **SRCH-01**: Visitor can search for a flag by veteran name
-- [ ] **SRCH-02**: Search results show row/position in human-readable format (e.g., "Row B, Position 7")
-- [ ] **SRCH-03**: Search results show flag location highlighted on an interactive visual grid map
-- [ ] **SRCH-04**: Search is fuzzy/typo-tolerant (handles misspellings and name variants)
-- [ ] **SRCH-05**: "Not found" state shows empathetic message with fallback guidance
+- [x] **SRCH-01**: Visitor can search for a flag by veteran name
+- [x] **SRCH-02**: Search results show row/position in human-readable format (e.g., "Row B, Position 7")
+- ~~**SRCH-03**: Search results show flag location highlighted on an interactive visual grid map~~ (removed — grid map cut from v1)
+- [x] **SRCH-04**: Search is fuzzy/typo-tolerant (handles misspellings and name variants)
+- [x] **SRCH-05**: "Not found" state shows empathetic message with fallback guidance
 
 ### Organizer Tools
 
-- [ ] **ORG-01**: Organizer can generate a printable A-Z name-to-position directory
+- [x] **ORG-01**: Organizer can generate a printable A-Z name-to-position directory
 
 ### Platform
 
-- [ ] **PLAT-01**: App works on mobile browsers (phone at event) and desktop browsers
-- [ ] **PLAT-02**: System handles 100+ flags without performance issues
+- [x] **PLAT-01**: App works on mobile browsers (phone at event) and desktop browsers
+- [x] **PLAT-02**: System handles 100+ flags without performance issues
 
 ## v2 Requirements
 
