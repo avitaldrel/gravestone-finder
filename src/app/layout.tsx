@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gravestone Finder - Flag Data Import",
+  title: "Field of Flags",
   description:
-    "Navigate memorial Field of Flags events. Search by name, locate flags on an interactive map.",
+    "Navigate memorial Field of Flags events. Search by name to find a veteran's flag location.",
 };
 
 export default function RootLayout({
