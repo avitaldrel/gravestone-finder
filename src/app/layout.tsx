@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Field of Flags",
+  title: "Flag Finder",
   description:
-    "Navigate memorial Field of Flags events. Search by name to find a veteran's flag location.",
+    "Navigate memorial Flag Finder events. Search by name to find a veteran's flag location.",
 };
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ import {
 import { DEMO_FLAGS } from "@/lib/demo-data";
 import type { Flag } from "@/lib/types/flag";
 
-const STORAGE_KEY = "gravestone-finder-demo";
+const STORAGE_KEY = "flag-finder-demo";
 
 interface DemoContextValue {
   isDemoActive: boolean;

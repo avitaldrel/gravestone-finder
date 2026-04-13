@@ -4,7 +4,7 @@ import { SearchPage } from "@/components/search/search-page";
 import type { Flag } from "@/lib/types/flag";
 
 export const metadata: Metadata = {
-  title: "Field of Flags - Find a Veteran's Flag",
+  title: "Flag Finder - Find a Veteran's Flag",
   description:
     "Search for a veteran's flag by name and find its location",
 };

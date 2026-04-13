@@ -47,7 +47,7 @@ export function SearchPage({ flags: serverFlags }: SearchPageProps) {
   return (
     <div className="mx-auto max-w-2xl px-4 pt-16 sm:px-6 sm:pt-24 md:pt-32">
       <h1 className="text-center text-3xl font-semibold leading-tight">
-        Field of Flags
+        Flag Finder
       </h1>
       <p className="mt-2 text-center text-sm text-muted-foreground">
         Search for a veteran&apos;s flag by name
@@ -59,17 +59,15 @@ export function SearchPage({ flags: serverFlags }: SearchPageProps) {
         {hasQuery && hasResults && <SearchResults results={results} />}
         {hasQuery && !hasResults && <NoResults query={debouncedQuery} />}
       </div>
-      {!hasQuery && (
-        <div className="mt-8 text-center">
-          <Link
-            href="/directory"
-            className="inline-flex items-center gap-2 rounded-lg border border-input px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-          >
-            <List className="h-4 w-4" />
-            View Full Directory
-          </Link>
-        </div>
-      )}
+      <div className="mt-8 text-center">
+        <Link
+          href="/directory"
+          className="inline-flex items-center gap-2 rounded-lg border border-input px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <List className="h-4 w-4" />
+          View Full Directory
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Printer } from "lucide-react";
+import { ArrowLeft, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AlphaDirectory } from "@/components/directory/alpha-directory";
@@ -54,7 +54,14 @@ export default function DirectoryPage() {
   if (isLoading) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Search
+        </Link>
+        <div className="mt-4 flex items-center justify-between">
           <h1 className="text-2xl font-semibold leading-tight">
             Flag Directory
           </h1>
@@ -68,7 +75,14 @@ export default function DirectoryPage() {
   if (flags.length === 0) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-        <h1 className="text-2xl font-semibold leading-tight">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Search
+        </Link>
+        <h1 className="mt-4 text-2xl font-semibold leading-tight">
           Flag Directory
         </h1>
         <div className="py-12 text-center">
@@ -92,8 +106,15 @@ export default function DirectoryPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+      <Link
+        href="/"
+        className="no-print inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to Search
+      </Link>
       {/* Header row: title + print button */}
-      <div className="flex items-center justify-between">
+      <div className="mt-4 flex items-center justify-between">
         <h1 className="text-2xl font-semibold leading-tight">
           Flag Directory
         </h1>

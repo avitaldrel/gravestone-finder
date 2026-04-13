@@ -48,7 +48,7 @@ describe("SearchPage", () => {
 
   it("renders idle state with search bar when flags exist", () => {
     renderWithDemo(<SearchPage flags={TEST_FLAGS} />);
-    expect(screen.getByText("Field of Flags")).toBeDefined();
+    expect(screen.getByText("Flag Finder")).toBeDefined();
     expect(screen.getByPlaceholderText(/search by veteran name/i)).toBeDefined();
     expect(screen.queryByText("No flags found")).toBeNull();
   });

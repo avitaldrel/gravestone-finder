@@ -1,7 +1,7 @@
 <!-- GSD:project-start source:PROJECT.md -->
 ## Project
 
-**Gravestone Finder**
+**Flag Finder**
 
 A web application for navigating memorial "Field of Flags" events — temporary displays where small flags are planted on a land plot, each representing a fallen veteran. Organizers prepare flag data in a spreadsheet externally, then import it via CSV. Family members use the app to search by name and locate their loved one's flag via an interactive map or row/position directory. The app is import + display only — no in-app data entry or organizer dashboard.
 
