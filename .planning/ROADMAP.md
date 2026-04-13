@@ -48,7 +48,12 @@ Plans:
   3. Search handles misspellings and name variants (e.g., "Bobby" vs "Robert", "MacDonald" vs "Mcdonald") and still returns relevant results
   4. Each search result displays the flag's location in human-readable format (e.g., "Row B, Position 7")
   5. When no match is found, the visitor sees an empathetic message with fallback guidance (not a blank page or generic error)
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md -- Install Fuse.js, create search components (SearchBar, ResultCard, NoResults, NoData, SearchResults, SearchPage), wire root page as search homepage
+- [ ] 02-02-PLAN.md -- Fuse.js search behavior tests, SearchPage integration tests, visual verification checkpoint
+
 **UI hint**: yes
 
 ### Phase 3: Interactive Grid Map and Platform
@@ -71,7 +76,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Data Foundation | 4/4 | Complete | 2026-04-12 |
-| 2. Visitor Search | 0/TBD | Not started | - |
+| 2. Visitor Search | 0/2 | Not started | - |
 | 3. Interactive Grid Map and Platform | 0/TBD | Not started | - |
 | 4. Demo Mode | 0/TBD | Not started | - |
 
