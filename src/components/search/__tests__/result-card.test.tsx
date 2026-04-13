@@ -1,7 +1,29 @@
-import { describe, it } from "vitest";
+import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { ResultCard } from "@/components/search/result-card";
 
 describe("ResultCard", () => {
-  it.todo("displays veteran name");
-  it.todo("displays location in Row X, Position Y format");
-  it.todo("renders MapPin icon");
+  const flag = {
+    id: 1,
+    name: "John Smith",
+    row_label: "B",
+    position: 7,
+    created_at: "",
+  };
+
+  it("displays veteran name", () => {
+    render(<ResultCard flag={flag} />);
+    expect(screen.getByText("John Smith")).toBeDefined();
+  });
+
+  it("displays location in Row X, Position Y format", () => {
+    render(<ResultCard flag={flag} />);
+    expect(screen.getByText("Row B, Position 7")).toBeDefined();
+  });
+
+  it("renders MapPin icon", () => {
+    const { container } = render(<ResultCard flag={flag} />);
+    const svg = container.querySelector("svg");
+    expect(svg).not.toBeNull();
+  });
 });
