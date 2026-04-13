@@ -25,6 +25,13 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <DemoProvider>
           <DemoBanner />
+          <div className="relative h-40 w-full overflow-hidden sm:h-52 md:h-64">
+            <img
+              src="/bg-flags.png"
+              alt="Field of Flags memorial display"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
           {children}
         </DemoProvider>
       </body>

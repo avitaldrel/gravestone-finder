@@ -38,14 +38,14 @@ export function SearchPage({ flags: serverFlags }: SearchPageProps) {
 
   if (!hasFlags) {
     return (
-      <div className="mx-auto max-w-2xl px-4 pt-16 sm:px-6 sm:pt-24 md:pt-32">
+      <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:pt-12 md:pt-16">
         <NoData />
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 pt-16 sm:px-6 sm:pt-24 md:pt-32">
+    <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:pt-12 md:pt-16">
       <h1 className="text-center text-3xl font-semibold leading-tight">
         Flag Finder
       </h1>
