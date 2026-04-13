@@ -24,7 +24,28 @@
       "WebFetch(domain:flagsforhonor.org)",
       "WebFetch(domain:rotaryclubofkeller.org)",
       "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs: define v1 requirements' --files .planning/REQUIREMENTS.md)",
-      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(01\\): capture phase context' --files .planning/phases/01-data-foundation/01-CONTEXT.md .planning/phases/01-data-foundation/01-DISCUSSION-LOG.md)"
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(01\\): capture phase context' --files .planning/phases/01-data-foundation/01-CONTEXT.md .planning/phases/01-data-foundation/01-DISCUSSION-LOG.md)",
+      "Bash(ls src/components/directory/)",
+      "Bash(ls src/app/directory/)",
+      "Bash(ls src/components/ui/)",
+      "Skill(gsd-plan-phase)",
+      "Bash(ls .planning/phases/02-visitor-search/*-CONTEXT.md)",
+      "Bash(ls .planning/phases/02-visitor-search/*-DISCUSS-CHECKPOINT.json)",
+      "Bash(ls \".planning/codebase/\"*.md)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(02\\): capture phase context' --files .planning/phases/02-visitor-search/02-CONTEXT.md .planning/phases/02-visitor-search/02-DISCUSSION-LOG.md)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs state record-session --stopped-at 'Phase 2 context gathered' --resume-file .planning/phases/02-visitor-search/02-CONTEXT.md)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(state\\): record phase 2 context session' --files .planning/STATE.md)",
+      "Bash(ls:*)",
+      "Skill(gsd-execute-phase)",
+      "Bash(node -e \"console.log\\(process.version\\)\")",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest add input --yes)",
+      "Bash(npx vitest:*)",
+      "Bash(node --input-type=module -e \"import\\('fuse.js'\\).then\\(m => console.log\\('fuse.js v' + m.default.version\\)\\)\")",
+      "Bash(npx --yes vitest run --reporter=verbose)",
+      "Bash(npm test:*)",
+      "Bash(node:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

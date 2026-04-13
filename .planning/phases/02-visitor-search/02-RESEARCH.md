@@ -346,19 +346,15 @@ export function ResultCard({ flag }: ResultCardProps) {
 |---|-------|---------|---------------|
 | A1 | Threshold 0.4 with ignoreLocation: true provides good fuzzy matching for names | Architecture Patterns | May need tuning -- but config is extracted to a constant, so risk is low (quick adjustment) |
 | A2 | ~100 flags is small enough that Fuse.js search is instant with no perceivable delay | Summary | Very low risk -- Fuse.js benchmarks show <1ms for 1000 records on a single key |
-| A3 | No `/directory` page exists yet from Phase 1 (not found in codebase) | Common Pitfalls | D-12 links to /directory -- if it doesn't exist, need to either build it in this phase or link to /admin with full flag list |
+| A3 | ~~No `/directory` page exists yet from Phase 1~~ **(RESOLVED)** `/directory` page exists at `src/app/directory/page.tsx`, built in Phase 1 plan 01-04. D-12 link to /directory is valid. | Common Pitfalls | No risk -- page exists. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Does a `/directory` page exist from Phase 1?**
-   - What we know: Codebase search shows no `/directory` route. The admin page at `/admin` shows a full flag table. CONTEXT.md references "/directory from Phase 1" in D-12.
-   - What's unclear: Was the directory page planned but not built, or was it descoped?
-   - Recommendation: The not-found fallback can link to `/admin` (which shows the full table) as an interim solution, or build a simple `/directory` page as part of this phase if needed. The admin page's flag table already shows all flags sorted by name.
+   - **RESOLVED:** Yes. The `/directory` page exists at `src/app/directory/page.tsx`, built in Phase 1 plan 01-04 (directory page with alphabetical and by-row views, print CSS). D-12's fallback link to `/directory` is valid and will work correctly. No interim workaround needed.
 
 2. **Should the metadata title change for the search homepage?**
-   - What we know: Current metadata says "Gravestone Finder - Flag Data Import". This is admin-focused.
-   - What's unclear: What the visitor-facing title should be.
-   - Recommendation: Update to something like "Field of Flags - Find a Veteran's Flag" for the root page. This is a minor change in `layout.tsx` or the page's own metadata export.
+   - **RESOLVED:** Yes. Plan 02-01 Task 3 updates the layout metadata title to "Field of Flags" and the root page exports its own metadata with title "Field of Flags - Find a Veteran's Flag". This is a minor change handled in the implementation plan.
 
 ## Validation Architecture
 

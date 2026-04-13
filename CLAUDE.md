@@ -3,7 +3,7 @@
 
 **Gravestone Finder**
 
-A web application for organizing and navigating memorial "Field of Flags" events — temporary displays where small flags are planted on a land plot, each representing a fallen veteran. Organizers use it to manage flag placement and track inventory. Family members use it to search by name and locate their loved one's flag via an interactive map or row/position directory.
+A web application for navigating memorial "Field of Flags" events — temporary displays where small flags are planted on a land plot, each representing a fallen veteran. Organizers prepare flag data in a spreadsheet externally, then import it via CSV. Family members use the app to search by name and locate their loved one's flag via an interactive map or row/position directory. The app is import + display only — no in-app data entry or organizer dashboard.
 
 **Core Value:** A family member can search a veteran's name and immediately find where their flag is planted — both on a visual map and as a human-readable location (row, position).
 
@@ -12,6 +12,7 @@ A web application for organizing and navigating memorial "Field of Flags" events
 - **Timeline**: Event coming soon — need a working product quickly
 - **Platform**: Web app only — must be responsive for mobile and desktop
 - **Data simplicity**: Name-only flag records for v1
+- **Data entry**: External (spreadsheet/CSV import) — app is import + display only
 - **Scale**: Must handle 100+ flags without performance issues
 <!-- GSD:project-end -->
 
@@ -147,7 +148,7 @@ A web application for organizing and navigating memorial "Field of Flags" events
 <!-- GSD:conventions-start source:CONVENTIONS.md -->
 ## Conventions
 
-Conventions not yet established. Will populate as patterns emerge during development.
+- Run agents in the background where possible to maximize parallelism and reduce idle time.
 <!-- GSD:conventions-end -->
 
 <!-- GSD:architecture-start source:ARCHITECTURE.md -->
