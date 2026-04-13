@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
+import { List } from "lucide-react";
 import Fuse from "fuse.js";
 import { useDebounce } from "@/hooks/use-debounce";
+import { useDemo } from "@/contexts/demo-context";
 import { FUSE_OPTIONS } from "@/lib/search/fuse-config";
 import type { Flag } from "@/lib/types/flag";
 import { SearchBar } from "@/components/search/search-bar";
@@ -14,9 +17,13 @@ interface SearchPageProps {
   flags: Flag[];
 }
 
-export function SearchPage({ flags }: SearchPageProps) {
+export function SearchPage({ flags: serverFlags }: SearchPageProps) {
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query, 200);
+  const { isDemoActive, demoFlags } = useDemo();
+
+  // Use demo flags when demo mode is active and no real data exists
+  const flags = serverFlags.length > 0 ? serverFlags : isDemoActive ? demoFlags : [];
 
   const fuse = useMemo(() => new Fuse(flags, FUSE_OPTIONS), [flags]);
 
@@ -52,6 +59,17 @@ export function SearchPage({ flags }: SearchPageProps) {
         {hasQuery && hasResults && <SearchResults results={results} />}
         {hasQuery && !hasResults && <NoResults query={debouncedQuery} />}
       </div>
+      {!hasQuery && (
+        <div className="mt-8 text-center">
+          <Link
+            href="/directory"
+            className="inline-flex items-center gap-2 rounded-lg border border-input px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            <List className="h-4 w-4" />
+            View Full Directory
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

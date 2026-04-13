@@ -45,7 +45,10 @@
       "Bash(npx --yes vitest run --reporter=verbose)",
       "Bash(npm test:*)",
       "Bash(node:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)"
     ]
   }
 }

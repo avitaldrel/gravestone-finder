@@ -1,7 +1,18 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { SearchPage } from "@/components/search/search-page";
+import { DemoProvider } from "@/contexts/demo-context";
 import type { Flag } from "@/lib/types/flag";
+import type { ReactElement } from "react";
+
+// Mock Next.js navigation (NoData uses useRouter)
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ refresh: vi.fn() }),
+}));
+
+function renderWithDemo(ui: ReactElement) {
+  return render(<DemoProvider>{ui}</DemoProvider>);
+}
 
 const TEST_FLAGS: Flag[] = [
   { id: 1, name: "John Smith", row_label: "A", position: 1, created_at: "" },
@@ -30,20 +41,20 @@ describe("SearchPage", () => {
   });
 
   it("renders no-data state when flags is empty", () => {
-    render(<SearchPage flags={[]} />);
+    renderWithDemo(<SearchPage flags={[]} />);
     expect(screen.getByText("Event setup in progress")).toBeDefined();
     expect(screen.queryByPlaceholderText(/search by veteran name/i)).toBeNull();
   });
 
   it("renders idle state with search bar when flags exist", () => {
-    render(<SearchPage flags={TEST_FLAGS} />);
+    renderWithDemo(<SearchPage flags={TEST_FLAGS} />);
     expect(screen.getByText("Field of Flags")).toBeDefined();
     expect(screen.getByPlaceholderText(/search by veteran name/i)).toBeDefined();
     expect(screen.queryByText("No flags found")).toBeNull();
   });
 
   it("renders result cards when query matches", () => {
-    render(<SearchPage flags={TEST_FLAGS} />);
+    renderWithDemo(<SearchPage flags={TEST_FLAGS} />);
     typeInSearch("Smith");
 
     expect(screen.getByText("John Smith")).toBeDefined();
@@ -53,7 +64,7 @@ describe("SearchPage", () => {
   });
 
   it("renders not-found state when query has no matches", () => {
-    render(<SearchPage flags={TEST_FLAGS} />);
+    renderWithDemo(<SearchPage flags={TEST_FLAGS} />);
     typeInSearch("Zzzzzznotaname");
 
     expect(screen.getByText("No flags found")).toBeDefined();
@@ -64,7 +75,7 @@ describe("SearchPage", () => {
   });
 
   it("handles fuzzy matching in component", () => {
-    render(<SearchPage flags={TEST_FLAGS} />);
+    renderWithDemo(<SearchPage flags={TEST_FLAGS} />);
     typeInSearch("Smth");
 
     expect(screen.getByText("John Smith")).toBeDefined();

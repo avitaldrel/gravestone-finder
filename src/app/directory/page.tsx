@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AlphaDirectory } from "@/components/directory/alpha-directory";
 import { RowDirectory } from "@/components/directory/row-directory";
+import { useDemo } from "@/contexts/demo-context";
 import type { Flag } from "@/lib/types/flag";
 import Link from "next/link";
 
@@ -20,10 +21,12 @@ import Link from "next/link";
  * - Print button triggers browser print dialog
  * - Print CSS shows both views, hides interactive elements
  * - Empty state guides user to import page
+ * - Demo mode: shows demo flags when no real data exists
  */
 export default function DirectoryPage() {
-  const [flags, setFlags] = useState<Flag[]>([]);
+  const [serverFlags, setServerFlags] = useState<Flag[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { isDemoActive, demoFlags } = useDemo();
 
   useEffect(() => {
     async function fetchFlags() {
@@ -31,16 +34,19 @@ export default function DirectoryPage() {
         const response = await fetch("/api/flags/import");
         if (response.ok) {
           const data = await response.json();
-          setFlags(Array.isArray(data) ? data : []);
+          setServerFlags(Array.isArray(data) ? data : []);
         }
       } catch {
-        // Silently fail -- page will show empty state
+        // Silently fail -- page will show empty state or demo data
       } finally {
         setIsLoading(false);
       }
     }
     fetchFlags();
   }, []);
+
+  // Use server flags if available, otherwise demo flags if demo is active
+  const flags = serverFlags.length > 0 ? serverFlags : isDemoActive ? demoFlags : [];
 
   // Compute stats
   const uniqueRows = new Set(flags.map((f) => f.row_label));
