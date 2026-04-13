@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roadmap delivers a memorial Flag event web app in three phases. Phase 1 sets up the project foundation and CSV data import -- the sole data path into the system. Phase 2 delivers the core value proposition: a public search frontend where families find their veteran's flag by name. Phase 3 completes the experience with an interactive SVG grid map, responsive polish, and performance verification at scale.
+This roadmap delivers a memorial Flag event web app in four phases. Phase 1 sets up the project foundation and CSV data import -- the sole data path into the system. Phase 2 delivers the core value proposition: a public search frontend where families find their veteran's flag by name. Phase 3 completes the experience with an interactive SVG grid map, responsive polish, and performance verification at scale. Phase 4 adds a demo mode with sample data so users can explore all features without importing real data.
 
 ## Phases
 
@@ -12,9 +12,10 @@ This roadmap delivers a memorial Flag event web app in three phases. Phase 1 set
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Data Foundation** - Project setup, CSV import pipeline, printable directory, and data layer
+- [x] **Phase 1: Data Foundation** - Project setup, CSV import pipeline, printable directory, and data layer
 - [ ] **Phase 2: Visitor Search** - Public fuzzy name search returning human-readable flag locations
 - [ ] **Phase 3: Interactive Grid Map and Platform** - SVG visual map with search highlight, responsive across devices, performant at scale
+- [ ] **Phase 4: Demo Mode** - "Try Demo" button seeds ~50 sample flags so users can explore all features without real data
 
 ## Phase Details
 
@@ -30,10 +31,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffolding, types, Supabase setup, DB schema, test infrastructure
-- [ ] 01-02-PLAN.md -- Parsing library (TDD): spreadsheet parsing, validation, row normalization, header detection
-- [ ] 01-03-PLAN.md -- Import API route and admin page UI (drop zone, import dialog, summary, errors)
-- [ ] 01-04-PLAN.md -- Directory page with alphabetical and by-row views, print CSS
+- [x] 01-01-PLAN.md -- Project scaffolding, types, Supabase setup, DB schema, test infrastructure
+- [x] 01-02-PLAN.md -- Parsing library (TDD): spreadsheet parsing, validation, row normalization, header detection
+- [x] 01-03-PLAN.md -- Import API route and admin page UI (drop zone, import dialog, summary, errors)
+- [x] 01-04-PLAN.md -- Directory page with alphabetical and by-row views, print CSS
 
 **UI hint**: yes
 
@@ -65,10 +66,23 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Data Foundation | 0/4 | Planned | - |
+| 1. Data Foundation | 4/4 | Complete | 2026-04-12 |
 | 2. Visitor Search | 0/TBD | Not started | - |
 | 3. Interactive Grid Map and Platform | 0/TBD | Not started | - |
+| 4. Demo Mode | 0/TBD | Not started | - |
+
+### Phase 4: Demo Mode
+**Goal**: A "Try Demo" button seeds the app with ~50 realistic sample veteran flags so organizers and visitors can explore all features (import, search, directory, map) without entering real data
+**Depends on**: Phase 3
+**Requirements**: TBD
+**Success Criteria** (what must be TRUE):
+  1. Visitor or organizer can click a "Try Demo" button and the app populates with ~50 sample flags
+  2. All features work with demo data: import summary shows results, search finds sample names, directory lists entries, map highlights positions
+  3. Demo data is clearly distinguishable from real data (visual indicator or separate mode)
+  4. Demo data can be cleared easily to return to a clean state
+**Plans**: TBD
+**UI hint**: yes

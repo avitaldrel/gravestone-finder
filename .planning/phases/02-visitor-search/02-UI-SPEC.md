@@ -52,19 +52,21 @@ Exceptions: Touch target minimum 44px height for the search input on mobile (acc
 | Role | Size | Weight | Line Height | Tailwind Class |
 |------|------|--------|-------------|----------------|
 | Body | 14px | 400 (normal) | 1.5 | `text-sm font-normal leading-normal` |
-| Label | 16px | 500 (medium) | 1.5 | `text-base font-medium leading-normal` |
+| Label | 16px | 600 (semibold) | 1.5 | `text-base font-semibold leading-normal` |
 | Heading | 24px | 600 (semibold) | 1.2 | `text-2xl font-semibold leading-tight` |
-| Display | 32px | 700 (bold) | 1.2 | `text-3xl font-bold leading-tight` |
+| Display | 32px | 600 (semibold) | 1.2 | `text-3xl font-semibold leading-tight` |
+
+**Weight rationale:** Two weights only -- 400 (normal) for body text and 600 (semibold) for all emphasis roles. The 32px Display size provides sufficient visual hierarchy over 24px Heading without needing a heavier weight. Label at 600 ensures form labels and result card names are clearly distinct from 400-weight body text.
 
 **Role assignments for this phase:**
 
 | Element | Role | Specifics |
 |---------|------|-----------|
-| Welcome heading (event name) | Display | 32px bold, centered, `text-foreground` |
+| Welcome heading (event name) | Display | 32px semibold, centered, `text-foreground` |
 | Welcome subtitle ("Search for a veteran's flag") | Body | 14px normal, centered, `text-muted-foreground` |
 | Search input placeholder | Body | 14px normal, `text-muted-foreground` (browser default placeholder styling) |
-| Search input text | Label | 16px medium, `text-foreground` |
-| Result card veteran name | Label | 16px medium, `text-foreground` |
+| Search input text | Label | 16px semibold, `text-foreground` |
+| Result card veteran name | Label | 16px semibold, `text-foreground` |
 | Result card location text | Body | 14px normal, `text-muted-foreground` |
 | Not-found heading | Heading | 24px semibold, centered |
 | Not-found body / guidance | Body | 14px normal, `text-muted-foreground` |
@@ -121,7 +123,7 @@ The root page (`/`) is a single-column, vertically centered hero layout.
 
 **Vertical centering:** Before the user types, the welcome + search bar should sit in the upper-middle of the viewport. Use `pt-16 sm:pt-24 md:pt-32` to push content down without true vertical centering (which would cause layout shift when results appear below).
 
-**Results area:** Directly below the search bar with `mt-6` (24px) gap. Results stack vertically with `gap-3` (12px) between cards.
+**Results area:** Directly below the search bar with `mt-6` (24px) gap. Results stack vertically with `gap-4` (16px) between cards.
 
 ### Result Card Layout (D-05, D-06)
 
@@ -136,7 +138,7 @@ Each result card uses the existing `Card` + `CardContent` components.
 
 - Card uses `size="sm"` variant for compact display
 - `flex items-start justify-between` for name + icon row
-- Veteran name: `font-medium` (Label role)
+- Veteran name: `font-semibold` (Label role)
 - Location: `text-sm text-muted-foreground` (Body role)
 - MapPin icon: `h-5 w-5 text-muted-foreground`, top-right corner
 - No card border highlight or hover effect -- these are read-only display cards
